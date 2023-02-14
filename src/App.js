@@ -1,21 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import "./App.css";
+import Timer from "./Timer";
 
 function App() {
-  const [dataComponent, setDataComponent] = useState(1);
+  // const [timer, setTimer] = useState(1);
+  const [toggle, setToggle] = useState(true);
 
-  const changeState = () => {
-    setDataComponent(dataComponent + 1);
-  }
+  // useEffect(() => {
+  //   const intervalID = setInterval(() => {
+  //     setTimer(timer => timer + 1);
+  //   }, 1000)
 
-  useEffect(() =>{
-    console.log("datacomponent changed")}, [dataComponent]
-  )
+  //   return () => {
+  //     clearInterval(intervalID)
+  //   }
+  // }, [])
+  // useEffect se lance lors du 1er chargement
+  //le tableau pour le state à surveiller
 
+  const toggleFunc = () => {
+    setToggle(!toggle);
+  };
   return (
     <div className="App">
-      <h1>Le state est {dataComponent}</h1>
-      <button onClick={changeState}>Change state</button>
+      <button onClick={toggleFunc}>Toggle</button>
+      {toggle && <Timer />}
     </div>
   );
 }
