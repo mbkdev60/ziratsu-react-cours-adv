@@ -1,6 +1,6 @@
-import { useState} from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
-import Timer from "./Timer";
+import Video from "./Video.mp4";
 
 function App() {
   // const [timer, setTimer] = useState(1);
@@ -18,13 +18,34 @@ function App() {
   // useEffect se lance lors du 1er chargement
   //le tableau pour le state à surveiller
 
+  const ref = useRef([]);
+
+  useEffect(() => {
+    console.log(ref);
+  }, []);
+
+  const addToRef = (el) => {
+    // console.log(el);
+    if (el && !ref.current.includes(el)) {
+      ref.current.push(el);
+    }
+  };
+
   const toggleFunc = () => {
     setToggle(!toggle);
   };
   return (
     <div className="App">
+      <video ref={addToRef} width="750" height="500" autoPlay controls muted>
+        <source src={Video} type="video/mp4" />
+      </video>
+      <video ref={addToRef} width="750" height="500" autoPlay controls muted>
+        <source src={Video} type="video/mp4" />
+      </video>
+      <video ref={addToRef} width="750" height="500" autoPlay controls muted>
+        <source src={Video} type="video/mp4" />
+      </video>
       <button onClick={toggleFunc}>Toggle</button>
-      {toggle && <Timer />}
     </div>
   );
 }

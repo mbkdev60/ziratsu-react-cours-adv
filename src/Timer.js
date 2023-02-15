@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 
 function Timer() {
   const [timer, setTimer] = useState(1);
@@ -9,7 +9,6 @@ function Timer() {
     }, 1000);
 
     return () => {
-      alert("Composant détruit !");
       clearInterval(intervalID);
     };
   }, []);
@@ -17,9 +16,9 @@ function Timer() {
   //le tableau pour le state à surveiller
 
   return (
-    <div className="App">
+    <>
       <h1>{timer}</h1>
-    </div>
+    </>
   );
 }
 
