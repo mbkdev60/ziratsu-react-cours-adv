@@ -13,8 +13,16 @@ code {
 }
 
 .content {
+<<<<<<< HEAD
   padding: 12px 15px;
   border: 1px solid #222;
   max-width: 300px;
   margin: 0 auto;
 }
+=======
+  padding:12px 15px;
+  border: 1px solid #222;
+  max-width: 300px;
+  margin: 10px auto;
+}
+>>>>>>> b2b23f7af1324bfa0d9fc3424bc38fefdbd36d94
