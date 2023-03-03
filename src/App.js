@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import "./App.css";
+import Content from "./Content";
 // import Video from "./Video.mp4";
 
 function App() {
@@ -15,9 +16,14 @@ function App() {
     setToggle(newArr);
     // setToggle(!toggle);
   };
+
+  const tableau = useMemo(() => {
+    return [1,2,3,4]
+  }, [])
+
   return (
     <div className="App">
-      <h1>{toggle}</h1>
+      <Content num={tableau} />
       <button onClick={toggleFunc}>Toggle2</button>
     </div>
   );
