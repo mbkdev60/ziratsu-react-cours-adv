@@ -1,7 +1,7 @@
 import "./App.css";
 // import Modal from "./Components/Modal/Modal";
-import Accord from "./Components/Accord/Accord";
-
+// import Accord from "./Components/Accord/Accord";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   // useEffect se lance lors du 1er chargement
@@ -10,7 +10,8 @@ function App() {
   return (
     <>
       {/* <Modal /> */}
-      <Accord />
+      {/* <Accord /> */}
+      <Navbar />
     </>
   );
 }
