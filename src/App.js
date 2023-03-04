@@ -1,14 +1,15 @@
+<<<<<<< HEAD
 import { useState, useEffect, useMemo } from "react";
+=======
+>>>>>>> 583f43a57dea072162fbc1c75c6bafbefb000419
 import "./App.css";
-import Content from "./Content";
-// import Video from "./Video.mp4";
+import Modal from "./Components/Modal/Modal";
 
 function App() {
-  const [toggle, setToggle] = useState([1, 2, 3]);
-
   // useEffect se lance lors du 1er chargement
   //le tableau pour le state à surveiller
 
+<<<<<<< HEAD
   const toggleFunc = () => {
     const newArr = [...toggle];
     newArr.push(4);
@@ -26,6 +27,12 @@ function App() {
       <Content num={tableau} />
       <button onClick={toggleFunc}>Toggle2</button>
     </div>
+=======
+  return (
+    <>
+      <Modal />
+    </>
+>>>>>>> 583f43a57dea072162fbc1c75c6bafbefb000419
   );
 }
 
